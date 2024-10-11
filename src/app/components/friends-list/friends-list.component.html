@@ -1,0 +1,24 @@
+<section class="text-center m-3">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user_friends of list">
+          <td>{{user_friends.first_name}}</td>
+          <td>{{user_friends.last_name}}</td>
+          <td>
+            <a [routerLink]="['/updateFriend', user_friends.id]" class="btn btn-success m-1">Edit</a>
+            <button type="button" class="btn btn-danger" (click)="delUserPost(user_friends.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a routerLink="/addFriend" class="btn btn-primary btn-lg">Add New Friend</a>
+
+</section>
